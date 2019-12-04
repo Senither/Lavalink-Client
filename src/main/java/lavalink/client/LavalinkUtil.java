@@ -49,14 +49,13 @@ public class LavalinkUtil {
         /* These are only to encode/decode messages */
         PLAYER_MANAGER.registerSourceManager(new YoutubeAudioSourceManager());
         PLAYER_MANAGER.registerSourceManager(new BandcampAudioSourceManager());
-        PLAYER_MANAGER.registerSourceManager(new SoundCloudAudioSourceManager());
+        PLAYER_MANAGER.registerSourceManager(SoundCloudAudioSourceManager.createDefault());
         PLAYER_MANAGER.registerSourceManager(new TwitchStreamAudioSourceManager());
         PLAYER_MANAGER.registerSourceManager(new VimeoAudioSourceManager());
         PLAYER_MANAGER.registerSourceManager(new HttpAudioSourceManager());
     }
 
     /**
-     *
      * @param message the Base64 audio track
      * @return the AudioTrack
      * @throws IOException if there is an IO problem
